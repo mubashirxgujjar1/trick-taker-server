@@ -1,0 +1,31 @@
+{
+  "name": "trick-taking-server",
+  "version": "1.0.0",
+  "description": "Backend server for the trick-taking card game",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "@types/socket.io": "^3.0.2",
+    "@types/uuid": "^9.0.8",
+    "@upstash/redis": "^1.31.2",
+    "agora-token": "^2.0.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

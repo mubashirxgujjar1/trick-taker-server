@@ -14,7 +14,14 @@ import { getCardValue, groupHandBySuit, sortCards } from './game-logic/utils';
 const app = express();
 const httpServer = createServer(app);
 
-const io = new Server(httpServer, { cors: { origin: "http://localhost:3000", methods: ["GET", "POST"] } });
+const VERCEL_FRONTEND_URL = "https://trick-taker-frontend.vercel.app";
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: ["http://localhost:3000", VERCEL_FRONTEND_URL],
+    methods: ["GET", "POST"]
+  }
+});
 
 const rooms = new Map<string, Room>();
 const games = new Map<string, GameState>();
@@ -25,7 +32,7 @@ const TURN_TIMEOUT_MS = 60000;
 const TRICK_END_DELAY_MS = 2000;
 const RECONNECTION_TIMEOUT_MS = 60000;
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: ["http://localhost:3000", VERCEL_FRONTEND_URL] }));
 app.get('/agora-token', (req, res) => {
     const channelName = req.query.channelName as string;
     const uid = Number(req.query.uid);

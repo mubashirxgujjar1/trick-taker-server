@@ -4,9 +4,8 @@
   "description": "Backend server for the trick-taking card game",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "tsc"
+   "build": "tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
